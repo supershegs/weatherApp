@@ -1,0 +1,52 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Simple Weather App</title>
+    <meta name="description" content="A simple weather app for new projects.">
+    <meta name="segsamos" content="weatherSite">
+
+    <meta property="og:title" content="A Simple Weather App">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="A simple weather app for new projects.">
+    
+
+    <link rel="" href="">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src=""></script>
+
+</head>
+<header>
+    <h1>Country weather App</h1>
+</header>
+
+<body>
+    <form class="example" action="" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Search.." name="city">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+    <div class="row">
+        {% if city %}
+        <div class="">
+            <h2>Country Name: {{city}}</h2>
+            <h3>Country code: {{data.country_code}}</h3>
+            <h5>coordinate : {{data.coordinate}}</h5>
+            <h5>temp : {{data.temp}}</h5>
+            <h5>pressure : {{data.pressure}}</h5>
+            <h5>humidity: {{data.humidity}}</h5>
+        </div> 
+        {% else %}
+        <div class="">
+            
+        </div>
+        {% endif %}
+    </div>
+  
+</body>
+</html>
